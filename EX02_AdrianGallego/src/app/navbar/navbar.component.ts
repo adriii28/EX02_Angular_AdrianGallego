@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { TokenService } from '../services/token.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,4 +11,10 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent {
 
+  constructor(private token : TokenService, private route: Router){}
+
+  logOut(){
+    this.route.navigate(['/login']);
+    this.token.logOut();
+  }
 }

@@ -1,5 +1,12 @@
 <app-navbar>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center m-3">
+        <div>
+            <form class="d-flex col-2 ms-auto" role="search" [formGroup]="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="search">
+                <button class="btn btn-outline-success" (click)="searchFilm()">Search</button>
+            </form>
+        </div>
+        
         @for (item of arrayFilm; track $index) {
         <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-3">
             <div class="card">

@@ -5,10 +5,15 @@ import { SeriesViewComponent } from './series-view/series-view.component';
 import { LoginComponent } from './login/login.component';
 import { PelisDetailComponent } from './pelis-detail/pelis-detail.component';
 import { SerieDetailComponent } from './serie-detail/serie-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
     {
         path: '',
+        component: LoginComponent
+    },
+    {
+        path: 'login',
         component: LoginComponent
     },
     {
@@ -30,5 +35,9 @@ export const routes: Routes = [
     {
         path: 'show/:id',
         component:SerieDetailComponent
+    },
+    {
+        path: '**',
+        component: NotFoundComponent
     }
 ];

@@ -27,4 +27,9 @@ export class RequestService {
     let url: string = "https://api.themoviedb.org/3/tv/"+id
     return this.http.get<any[]>(url);
   }
+
+  get_find_film(text: string){
+    let url: string = "https://api.themoviedb.org/3/search/movie?query="+text
+    return this.http.get<any[]>(url);
+  }
 }

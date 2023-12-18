@@ -7,6 +7,9 @@ export class TokenService {
 
   constructor() { }
 
+  public logOut(){
+    window.sessionStorage.clear()
+  }
   public saveToken(token : string) : void{
     window.sessionStorage.removeItem('auth-token');
     window.sessionStorage.setItem('auth-token', token);
